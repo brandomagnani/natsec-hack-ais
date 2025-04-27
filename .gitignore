@@ -1,0 +1,8 @@
+# Cursor IDE specific files
+.cursor/
+.csv
+.cursorignore
+plots/
+data/
+
+.DS_Store
