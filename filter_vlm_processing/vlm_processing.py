@@ -399,14 +399,15 @@ def save_vlm_results(pattern_info, output_path):
 
 # --- Main execution block --- Reprocessing Candidates ---
 if __name__ == "__main__":
-    # Base directory (absolute path)
-    BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    # Current directory (where vlm_processing.py is located)
+    CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
     
     # --- Configuration ---
-    CANDIDATE_DATA_PATH = os.path.join(BASE_DIR, 'data/combined_candidates.csv') # Updated to use the combined file with absolute path
+    # Use data directory within filter_vlm_processing folder
+    CANDIDATE_DATA_PATH = os.path.join(CURRENT_DIR, 'data/combined_candidates.csv')
     
-    # Save plots inside the natsec-hack-ais directory instead of parent directory
-    BASE_PLOT_DIR = os.path.join(os.path.dirname(__file__), 'plots')
+    # Use plots directory within filter_vlm_processing folder
+    BASE_PLOT_DIR = os.path.join(CURRENT_DIR, 'plots')
     
     # Define PLOT_DIRS using the new base
     PLOT_DIRS = {
